@@ -1,2 +1,10 @@
 logger:
     level: DEBUG
+console:
+  max_message_size_bytes: 409600
+  username: "dara"
+  password: "123456789"
+socket:
+  max_message_size_bytes: 4096 # reserved buffer
+  max_request_size_bytes: 131072
+  server_key: "server-key"

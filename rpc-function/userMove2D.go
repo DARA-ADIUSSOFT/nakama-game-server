@@ -1,4 +1,4 @@
-package main
+package rpcFunction
 
 import (
 	"context"
@@ -15,9 +15,16 @@ type UserMove struct {
 	Y int `json:"y"`
 }
 
-func rpcUserMove2D(ctx context.Context, logger runtime.Logger, db *sql.DB, nk runtime.NakamaModule, payload string) (string, error) {
-	logger.Debug("User move RPC is called")
+func RpcUserMove2D(ctx context.Context, logger runtime.Logger, db *sql.DB, nk runtime.NakamaModule, payload string) (string, error) {
+	type request struct {
+		X int
+		Y int
+	}
 
+	logger.Debug("User move RPC is called")
+	var req request
+	json.Unmarshal([]byte(payload), &req)
+	fmt.Println("payload data: ", req.X)
 	// Initialize the response with valid field names (capitalized)
 	response := &UserMove{X: 2, Y: 2}
 

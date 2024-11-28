@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package api;
+
+option go_package = "api/";
+
+message RpcFindMatchResponse {
+    // One or more matches that fit the user's request.
+    string match_id = 1;
+}

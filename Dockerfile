@@ -1,6 +1,6 @@
 FROM heroiclabs/nakama-pluginbuilder:3.24.2 AS builder
 
-ENV GO111MODULE on
+ENV GO111MODULE auto
 ENV CGO_ENABLED 1
 
 WORKDIR /backend
